@@ -1,0 +1,83 @@
+.booking-card {
+    background: white;
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    margin: auto;
+  }
+  
+  .booking-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  /* Flex-based spacing for fields */
+  .booking-field {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .booking-field label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Select Dropdown */
+  .select-trigger {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .select-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+  }
+  
+  .select-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .select-item:hover {
+    background-color: #ef9f45;
+    color: white;
+  }
+  
+  .select-icon {
+    margin-left: 8px;
+  }
+  
+  /* Button */
+  .book-table-btn {
+    background-color: #ef9f45;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .book-table-btn:hover {
+    background-color: #d98834;
+  }
+  

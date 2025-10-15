@@ -1,0 +1,75 @@
+
+@startuml
+entity "Users" {
+  * id : varchar(36) <<PK>>
+  --
+  name : varchar(100) <<NOT NULL>>
+  email : varchar(120) <<NOT NULL, UNIQUE>>
+  password : varchar(255) <<NOT NULL>>
+  role : varchar(20)
+}
+
+entity "Food_Items" {
+  * id : varchar(36) <<PK>>
+  --
+  name : varchar(100) <<NOT NULL>>
+  description : varchar(255) <<NOT NULL>>
+  price : float <<NOT NULL>>
+  image_url : varchar(255)
+  category : varchar(50) <<NOT NULL>>
+}
+
+entity "Orders" {
+  * id : varchar(36) <<PK>>
+  --
+  user_id : varchar(36) <<FK, NOT NULL>>
+  total_price : float <<NOT NULL>>
+  status : varchar(50)
+}
+
+entity "Order_Items" {
+  * id : varchar(36) <<PK>>
+  --
+  order_id : varchar(36) <<FK, NOT NULL>>
+  food_id : varchar(36) <<FK, NOT NULL>>
+  quantity : int <<NOT NULL>>
+}
+
+entity "Receipts" {
+  * id : varchar(36) <<PK>>
+  --
+  order_id : varchar(36) <<FK, NOT NULL>>
+  file_path : varchar(255) <<NOT NULL>>
+  created_at : datetime
+}
+
+entity "Table_Bookings" {
+  * id : varchar(36) <<PK>>
+  --
+  user_id : varchar(36) <<FK, NOT NULL>>
+  date : date <<NOT NULL>>
+  time : time <<NOT NULL>>
+  status : varchar(50)
+}
+
+entity "Tables" {
+  * id : varchar(36) <<PK>>
+  --
+  booking_id : varchar(36) <<FK>>
+  user_id : varchar(36) <<FK>>
+  table_number : int <<NOT NULL>>
+  booking_date : date
+  booking_time : time
+  booking_status : enum('AVAILABLE','PENDING','CONFIRMED') <<NOT NULL>>
+  is_booked : tinyint(1)
+}
+
+Users ||--o{ Orders : places
+Users ||--o{ Table_Bookings : books
+Users ||--o{ Tables : reserves
+Orders ||--o{ Order_Items : contains
+Food_Items ||--o{ Order_Items : included_in
+Orders ||--o| Receipts : generates
+Table_Bookings ||--o| Tables : assigned_to
+
+@enduml

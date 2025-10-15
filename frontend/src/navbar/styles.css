@@ -1,0 +1,108 @@
+/* Navigation Menu Root */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: #fbfefb;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* Logo Styling */
+  .logo {
+    width: 120px; /* Adjust logo size */
+    height: auto;
+    margin-right: 15px; /* Space between logo and menu */
+  }
+  
+  /* Navigation List */
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Reduced spacing between items */
+    margin-left: 10px; /* Small left margin after the logo */
+  }
+  
+  /* Default Unselected Text Color */
+  .nav-link {
+    text-decoration: none;
+    color: #abb0ab;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Underline Effect on Hover & Active */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ef9f45;
+    transition: width 0.3s ease;
+  }
+  
+  /* Show underline & change text color when hovered or active */
+  .nav-link:hover::after,
+  .nav-link:focus::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link.active {
+    color: #455460;
+  }
+  
+  /* Notification Icon */
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .notification-icon {
+    width: 22px;
+    height: 22px;
+    color: #555;
+  }
+  
+  /* Auth Buttons */
+  .auth-button {
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+  }
+  
+  /* Sign In Button */
+  .sign-in {
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+  }
+  
+  .sign-in:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Sign Up Button */
+  .sign-up {
+    border: none;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .sign-up:hover {
+    background-color: #0056b3;
+  }
+  
